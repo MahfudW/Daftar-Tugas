@@ -13,7 +13,7 @@ function App() {
 
   // simpan ke localStorage setiap kali todos berubah
   useEffect(() => {
-    localStorage.setItem("todo", JSON.stringify(todos));
+    localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
 
   const addTodo = (newTodo) => {
