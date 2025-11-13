@@ -13,19 +13,27 @@ function App() {
 
   // simpan ke localStorage setiap kali todos berubah
   useEffect(() => {
-    localStorage.setItem("todos", JSON.stringify(todos));
+    localStorage.setItem("todos", JSON.stringify(todos)); // ✅ Ubah dari "todo" jadi "todos"
   }, [todos]);
 
   const addTodo = (newTodo) => {
     if (!newTodo.trim()) return;
-    setTodos([...todos, newTodo]);
+    const updatedTodos = [...todos, { text: newTodo, completed: false}];
+    setTodos(updatedTodos);
+  };
+
+  const toggleTodo = (index) => {
+    const updatedTodos = todos.map((todo, i) =>
+      i === index ? { ...todo, completed: !todo.completed} : todo
+    );
+    setTodos(updatedTodos);
   };
 
   return (
     <>
       <Header />
       <TodoForm onAdd={addTodo} />
-      <TodoList todos={todos} />
+      <TodoList todos={todos} onToggle={toggleTodo} />
     </>
   );
 }

@@ -17,8 +17,12 @@ function TodoForm({ onAdd }) {
 
     return (
         <form onSubmit={handleSubmit}>
-            <input 
+            <input
                 type="text"
+
+                id='todo-input' // ✅ Tambahkan id
+
+                name='todo' // ✅ Tambahkan name
 
                 placeholder='Tambahkan Tugas...'
 
