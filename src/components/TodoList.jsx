@@ -2,7 +2,7 @@ import ListItem from "./ListItem";
 
 function TodoList({ todos, onToggle }) {
     return (
-        <ul>
+        <ul className="space-y-2">
             {todos.map((todo, index) => (
                 <ListItem
                     key={index}
