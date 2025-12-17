@@ -30,11 +30,13 @@ function App() {
   };
 
   return (
-    <>
-      <Header />
-      <TodoForm onAdd={addTodo} />
-      <TodoList todos={todos} onToggle={toggleTodo} />
-    </>
+    <div className="min-h-screen bg-gray-100 flex flex-col items-center p-6">
+      <div className="bg-white shadow-xl rounded-lg w-full max-w-md p-6">
+        <Header />
+        <TodoForm onAdd={addTodo} />
+        <TodoList todos={todos} onToggle={toggleTodo} />
+      </div>
+    </div>
   );
 }
 
